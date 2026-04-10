@@ -54,7 +54,7 @@ function selectClient(el) {
   coachInputs = [];
   document.getElementById('chat-history').innerHTML = `
     <div class="welcome-msg">
-      <p>De sessie begint. Stuur je eerste coachingsbericht.</p>
+      <p>De sessie kan beginnen, je client staat klaar. Nodig hier onder je client uit.</p>
     </div>`;
   closeFeedback();
 }
