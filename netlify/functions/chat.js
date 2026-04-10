@@ -22,7 +22,7 @@ exports.handler = async (event) => {
     return { statusCode: 400, body: JSON.stringify({ error: 'Missing systemPrompt or messages' }) };
   }
 
-  const apiKey = process.env.OPENAI_API_KEY;
+  const apiKey = process.env.API_KEY_COACH_OEF;
   if (!apiKey) {
     return { statusCode: 500, body: JSON.stringify({ error: 'API key not configured' }) };
   }
