@@ -1,8 +1,5 @@
 // netlify/functions/chat.js
-// Secure proxy – API key NEVER exposed to the browser
-
-const fetch = (...args) =>
-  import('node-fetch').then(({ default: f }) => f(...args));
+// Gebruikt de ingebouwde fetch van Node 18+ — geen node-fetch package nodig
 
 exports.handler = async (event) => {
   if (event.httpMethod !== 'POST') {
@@ -22,7 +19,7 @@ exports.handler = async (event) => {
     return { statusCode: 400, body: JSON.stringify({ error: 'Missing systemPrompt or messages' }) };
   }
 
-  const apiKey = process.env.API_KEY_COACH_OEF;
+  const apiKey = process.env.OPENAI_API_KEY;
   if (!apiKey) {
     return { statusCode: 500, body: JSON.stringify({ error: 'API key not configured' }) };
   }
