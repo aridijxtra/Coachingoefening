@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Oefen je Coachingsvaardigheden</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header>
+    <div class="header-inner">
+      <img src="logo.png" alt="Logo" class="logo" onerror="this.style.display='none'" />
+      <div class="header-text">
+        <h1>Oefen je coachingsvaardigheden</h1>
+        <p class="subtitle">Kies eerst een cliënt</p>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Client selection -->
+    <section id="client-section">
+      <div class="client-grid">
+        <button class="client-card" data-client="gemotiveerd" onclick="selectClient(this)">
+          <span class="client-icon">🌟</span>
+          <span class="client-name">De Gemotiveerde</span>
+          <span class="client-desc">Energiek, vol plannen, wil snel vooruit</span>
+        </button>
+        <button class="client-card" data-client="ongemotiveerd" onclick="selectClient(this)">
+          <span class="client-icon">😶</span>
+          <span class="client-name">De Ongemotiveerde</span>
+          <span class="client-desc">Passief, ziet het nut er niet van in</span>
+        </button>
+        <button class="client-card" data-client="dwars" onclick="selectClient(this)">
+          <span class="client-icon">🔄</span>
+          <span class="client-name">De Dwarse</span>
+          <span class="client-desc">Verzet zich, gaat altijd tegen</span>
+        </button>
+        <button class="client-card" data-client="complex" onclick="selectClient(this)">
+          <span class="client-icon">🌀</span>
+          <span class="client-name">De Complexe</span>
+          <span class="client-desc">Veel lagen, moeilijk te doorgronden</span>
+        </button>
+        <button class="client-card" data-client="arrogant" onclick="selectClient(this)">
+          <span class="client-icon">👑</span>
+          <span class="client-name">De Arrogante</span>
+          <span class="client-desc">Weet het beter, minacht advies</span>
+        </button>
+        <button class="client-card" data-client="oneerlijk" onclick="selectClient(this)">
+          <span class="client-icon">🎭</span>
+          <span class="client-name">De Oneerlijke</span>
+          <span class="client-desc">Verbergt de waarheid, omzeilt vragen</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- Chat section -->
+    <section id="chat-section" class="hidden">
+      <div class="chat-layout">
+        <div class="chat-main">
+          <div class="chat-header">
+            <button class="back-btn" onclick="resetSession()">← Andere cliënt</button>
+            <div class="active-client-info">
+              <span id="active-icon"></span>
+              <span id="active-name"></span>
+            </div>
+            <button class="feedback-btn" onclick="requestFeedback()">📊 Vraag feedback</button>
+          </div>
+
+          <div id="chat-history" class="chat-history">
+            <div class="welcome-msg">
+              <p>De sessie begint zodra je je eerste bericht stuurt.</p>
+            </div>
+          </div>
+
+          <div class="chat-input-area">
+            <textarea
+              id="user-input"
+              placeholder="Jouw coaching reactie..."
+              rows="3"
+              onkeydown="handleKey(event)"
+            ></textarea>
+            <button class="send-btn" onclick="sendMessage()">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+            </button>
+          </div>
+          <p class="hint">Enter = nieuwe regel &nbsp;|&nbsp; Ctrl+Enter = verstuur</p>
+        </div>
+
+        <!-- Feedback panel -->
+        <div id="feedback-panel" class="feedback-panel hidden">
+          <div class="feedback-header">
+            <h3>📊 Feedback op jouw coaching</h3>
+            <button class="close-feedback" onclick="closeFeedback()">✕</button>
+          </div>
+          <div id="feedback-content" class="feedback-content">
+            <p class="feedback-placeholder">Klik op "Vraag feedback" na een gesprek om een analyse te ontvangen van jouw coachingsvaardigheden.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
