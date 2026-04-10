@@ -1,15 +1,15 @@
 /* ===== CSS VARIABLES ===== */
 :root {
-  --ink: #1a1a2e;
-  --ink-soft: #3d3d5c;
+  --ink: #1a0505;
+  --ink-soft: #4a2020;
   --paper: #faf8f4;
-  --paper-warm: #f3efe8;
-  --accent: #c9631a;
-  --accent-light: #e8845a;
-  --teal: #2a7c6f;
-  --teal-light: #3d9e8f;
-  --border: #d9d4cc;
-  --shadow: rgba(26,26,46,0.10);
+  --paper-warm: #fff8f0;
+  --accent: #b91c1c;
+  --accent-light: #dc2626;
+  --teal: #b45309;
+  --teal-light: #d97706;
+  --border: #e5d4c0;
+  --shadow: rgba(26,5,5,0.12);
   --radius: 14px;
   --font-head: 'Playfair Display', Georgia, serif;
   --font-body: 'DM Sans', system-ui, sans-serif;
@@ -29,9 +29,9 @@ body {
 
 /* ===== HEADER ===== */
 header {
-  background: var(--ink);
+  background: #111;
   padding: 22px 40px;
-  border-bottom: 3px solid var(--accent);
+  border-bottom: 4px solid #f5c800;
 }
 
 .header-inner {

@@ -1,0 +1,8 @@
+{
+  "name": "coaching-oefening",
+  "version": "1.0.0",
+  "description": "Interactieve coaching oefentool",
+  "engines": {
+    "node": "18"
+  }
+}
